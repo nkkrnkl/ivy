@@ -934,18 +934,13 @@ def test_numpy_instance_squeeze(
         class_="ndarray",
         method_name="squeeze",
     )
-
 @handle_frontend_method(
     method_tree="numpy.ndarray.std",
     dtype_x_axis=helpers.dtype_values_axis(
         available_dtypes=helpers.get_dtypes("valid"),
         max_value=100,
-        #min_num_dims=1,
-        #max_num_dims=5,
-        #min_dim_size=1,
         valid_axis=True,
         force_int_axis=True,
-        #allow_neg_axes=True,
     ),
     keepdims=st.booleans(),
     where=np_frontend_helpers.where(),
@@ -993,9 +988,6 @@ def test_numpy_instance_std(
         class_name="ndarray",
         method_name="std",
     )
-
-
-
 @handle_frontend_method(
     method_tree="numpy.ndarray.__add__",
     dtype_and_x=helpers.dtype_and_values(
